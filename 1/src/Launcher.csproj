@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>e8c885e3-21e5-4ac7-9490-11a4b2bfe7c3</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>Launcher</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Memory" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="System.Core" />
+    <Compile Include="Global.cs" />
+    <Compile Include="WFast\Networking\SocketEvent.cs" />
+    <Compile Include="WFast\Networking\ClientEvent.cs" />
+    <Compile Include="WFast\Networking\LatencyMode.cs" />
+    <Compile Include="WFast\Networking\TCPRawClient.cs" />
+    <Compile Include="WFast\Networking\Protocol\PacketCalculateEvent.cs" />
+    <Compile Include="WFast\Networking\Protocol\IPacket.cs" />
+    <Compile Include="WFast\Collections\ConcurrentMemoryStream.cs" />
+    <Compile Include="WFast\Collections\MemoryStreamIsFull.cs" />
+    <Compile Include="WFast\Collections\MemoryStreamErrorGrow.cs" />
+    <Compile Include="WFast\Collections\MemoryStreamIsEmpty.cs" />
+    <Compile Include="WFast\Collections\MemoryStream.cs" />
+    <Compile Include="PNLauncher\MainForm.cs" />
+    <Compile Include="PNLauncher\Program.cs" />
+    <Compile Include="PNLauncher\Structs\Server.cs" />
+    <Compile Include="PNLauncher\Help\StringHelper.cs" />
+    <Compile Include="PNLauncher\Network\AuthKey.cs" />
+    <Compile Include="PNLauncher\Network\AuthPacket.cs" />
+    <Compile Include="PNLauncher\Network\PacketIds.cs" />
+    <Compile Include="PNLauncher\Network\Packet.cs" />
+    <Compile Include="PNLauncher\Languages\LangController.cs" />
+    <Compile Include="PNLauncher\Core\Auth.cs" />
+    <Compile Include="PNLauncher\Core\Config.cs" />
+    <Compile Include="PNLauncher\Core\FileCache.cs" />
+    <Compile Include="PNLauncher\Core\MD5Calculator.cs" />
+    <Compile Include="PNLauncher\Core\UpdateStatus.cs" />
+    <Compile Include="PNLauncher\Core\UpdateFile.cs" />
+    <Compile Include="PNLauncher\Core\GameCoordinator.cs" />
+    <Compile Include="Launcher\AuthForm.cs" />
+    <Compile Include="Launcher\LKForm.cs" />
+    <Compile Include="Launcher\SelectMirror.cs" />
+    <Compile Include="Launcher\SelectRuntime.cs" />
+    <Compile Include="Launcher\Properties\Resources.cs" />
+    <Compile Include="Launcher\Properties\Settings.cs" />
+    <Compile Include="Launcher\Network\ChangePassword.cs" />
+    <Compile Include="Launcher\Help\PathHelper.cs" />
+    <Compile Include="Launcher\Core\CRunTime.cs" />
+    <Compile Include="Launcher\Core\MemoryStreamReadObj.cs" />
+    <Compile Include="Launcher\Core\SyncMemoryStream.cs" />
+    <EmbeddedResource Include="Launcher.AuthForm.resources" />
+    <EmbeddedResource Include="Launcher.LKForm.resources" />
+    <EmbeddedResource Include="PNLauncher.MainForm.resources" />
+    <EmbeddedResource Include="Launcher.Properties.Resources.resources" />
+    <EmbeddedResource Include="Launcher.SelectMirror.resources" />
+    <EmbeddedResource Include="Launcher.SelectRuntime.resources" />
+  </ItemGroup>
+</Project>
